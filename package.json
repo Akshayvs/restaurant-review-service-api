@@ -11,12 +11,14 @@
     "sql",
     "node.js",
     "javascript",
-    "ES6"
+    "ES6",
+    "RESTful API",
+    "Express"
   ],
   "author": "ak93",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.2",
-    "mysql": "^2.15.0"
+    "express": "4.16.2",
+    "mysql": "2.15.0"
   }
 }
