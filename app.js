@@ -4,8 +4,6 @@ const express = require('express');
 const http = require('http');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-
-
 const sqlConfig = require('./config/default').mySqlConfig;
 const serviceStatus = require('./lib/routes/service-status');
 const users = require('./lib/routes/users');

@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = {
-
     mySqlConfig: {
         host: 'localhost',
         user: 'ak93',
