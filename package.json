@@ -1,0 +1,22 @@
+{
+  "name": "restaurant-review-service-api",
+  "version": "1.0.0",
+  "description": "a mini project to replicate functionality provided by yelp. This API uses a MySQL data store for persisting and querying user and Restaurant data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mysql",
+    "sql",
+    "node.js",
+    "javascript",
+    "ES6"
+  ],
+  "author": "ak93",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}
