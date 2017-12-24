@@ -11,9 +11,9 @@ const restaurants = require('./lib/routes/restaurants');
 
 var pool = mysql.createPool(sqlConfig);
 
-pool.getConnection(function (error, connection) {
+pool.getConnection(function(error, connection) {
     if (error) {
-        console.log("Cannot Connect to Database. Error : ", JSON.stringify(error, null, 2));
+        console.log('Cannot Connect to Database. Error : ', JSON.stringify(error, null, 2));
         process.exit();
 
     } else {
@@ -39,7 +39,7 @@ function initializeService() {
     app.set('port', portNumber);
     const server = http.createServer(app);
 
-    server.listen(portNumber, function () {
+    server.listen(portNumber, function() {
         console.log('Restaurant-Review-API started. Listening on port ' + portNumber);
         console.log(`Test check : http://localhost:${portNumber}/service/service-status`);
     });
