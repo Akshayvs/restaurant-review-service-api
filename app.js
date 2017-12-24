@@ -8,6 +8,7 @@ const sqlConfig = require('./config/default').mySqlConfig;
 const serviceStatus = require('./lib/routes/service-status');
 const users = require('./lib/routes/users');
 const restaurants = require('./lib/routes/restaurants');
+const ratings = require('./lib/routes/rating');
 
 var pool = mysql.createPool(sqlConfig);
 
@@ -25,15 +26,16 @@ pool.getConnection(function(error, connection) {
 });
 
 function initializeService() {
-// Initializing a REST API
+    // Initializing a REST API
     const app = express();
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
 
-//Attaching routes to the API
+    //Attaching routes to the API
     serviceStatus.init(app);
     users.init(app, pool);
     restaurants.init(app, pool);
+    ratings.init(app, pool);
 
     const portNumber = 3000;
     app.set('port', portNumber);
