@@ -1,0 +1,282 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Restaurant-review-service-api",
+		"_postman_id": "cac1446e-003e-c61a-04f9-d10b6b130297",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"url": "localhost:3000/users/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\" : \"Domino\",\t\n\t\"lastName\" : \"PizzaGuy\",\n\t\"phone\" :9999888844\n}"
+						},
+						"description": "Create User "
+					},
+					"response": []
+				},
+				{
+					"name": "get all users from database",
+					"request": {
+						"url": "localhost:3000/users/allusers",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "getUsers by phone-number (unique identifier for users)",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/users/getUsers?phone=5714099543,7773334444",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"getUsers"
+							],
+							"query": [
+								{
+									"key": "phone",
+									"value": "5714099543,7773334444",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update existing user",
+					"request": {
+						"url": "localhost:3000/users/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"originalValue\" : {\n\t\t\"firstName\"\t:\"Domino\",\n\t\t\"lastName\"\t:\"PizzaGuy\",\n\t\t\"phone\":9999888844\n\t},\n\t\"newValue\":{\n\t\t\"firstName\"\t:\"akshay\",\n\t\t\"lastName\"\t:\"PizzaGuy\",\n\t\t\"phone\" :9998887777\n\t\t\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant",
+			"description": "",
+			"item": [
+				{
+					"name": "update restaurant",
+					"request": {
+						"url": "localhost:3000/restaurants/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"originalValue\" : {\n\t\"name\" :\"SushiOn\",\n\t\"category\" :\"Sushi\",\n\t\"address\" : \"mcLean, jones Branch Drive\",\n\t\"state\" : \"VA\",\n\t\"city\" : \"McLean\",\n\t\"zip\" : 22030\n\t},\n\t\"newValue\" : {\n\t\"name\" :\"SushiOFFoN\",\n\t\"category\" :\"Sushi\",\n\t\"address\" : \"mcLean, jones Branch Driveeee\",\n\t\"state\" : \"JA\",\n\t\"city\" : \"BlaBla\",\n\t\"zip\" : 99999\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all restaurants",
+					"request": {
+						"url": "localhost:3000/restaurants/allrestaurants",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create restaurant",
+					"request": {
+						"url": "localhost:3000/restaurants/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" :null,\n\t\"category\" :\"Sonawane\",\n\t\"address\" : \"1234, grove gate ct\",\n\t\"state\" : \"VA\",\n\t\"city\" : \"fairfax\",\n\t\"zip\" : 12345\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get restaurants by name",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/restaurants/byName?name=kizuna",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								"byName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "kizuna",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ger restaurants by city",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/restaurants/bycity?city=Vienna",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								"bycity"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "Vienna",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ger restaurant by category",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/restaurants/bycategory?category=japanese",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								"bycategory"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "japanese",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rating",
+			"description": "",
+			"item": [
+				{
+					"name": "submitRating",
+					"request": {
+						"url": "localhost:3000/rating/submitRating",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userPhone\" : 5714099543,\n\t\"restaurantName\" : \"Kizuna\",\n\t\"address\" : \"ak92\",\n\t\"cost\":1,\n\t\"food\" :1,\n\t\"cleanliness\":1,\n\t\"service\":1,\n\t\"comment\":\"Boooooo\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service Status",
+			"request": {
+				"url": "http://localhost:3000/service/service-status",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "\t\t"
+			},
+			"response": []
+		}
+	]
+}
