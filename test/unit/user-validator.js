@@ -79,26 +79,6 @@ describe('utils/user-validator', function() {
         ]);
     });
 
-    it('should call validator.isMobilePhone exactly one time', function() {
-        const firstName = 'firstName';
-        const lastname = 'Lastname';
-        const phone = 1234567890;
-
-        userValidator(firstName, lastname, phone);
-
-        expect(validatorMock.isMobilePhone.callCount).to.eql(1);
-    });
-
-    it('should NOT call validator.isMobilePhone if phone number is not 10 digit', function() {
-        const firstName = 'firstName';
-        const lastname = 'Lastname';
-        const phone = 123;
-
-        userValidator(firstName, lastname, phone);
-
-        expect(validatorMock.isMobilePhone.callCount).to.eql(0);
-    });
-
     it('should return `true` if all the checks pass', function() {
         const firstName = 'firstName';
         const lastname = 'Lastname';
