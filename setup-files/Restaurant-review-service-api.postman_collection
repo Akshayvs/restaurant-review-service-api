@@ -143,7 +143,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\" :null,\n\t\"category\" :\"Sonawane\",\n\t\"address\" : \"1234, grove gate ct\",\n\t\"state\" : \"VA\",\n\t\"city\" : \"fairfax\",\n\t\"zip\" : 12345\n}"
+							"raw": "{\n\t\"name\" :\"BombayCafe\",\n\t\"category\" :\"Indian\",\n\t\"address\" : \"1024, Ramona Drive\",\n\t\"state\" : \"WashingtonDC\",\n\t\"city\" : \"dc\",\n\t\"zip\" : 22222\n}"
 						},
 						"description": ""
 					},
@@ -238,6 +238,42 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "Query Restaurants",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/restaurants/query?zip=22222&totalScore=4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								"query"
+							],
+							"query": [
+								{
+									"key": "zip",
+									"value": "22222",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "totalScore",
+									"value": "4",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "\t"
+					},
+					"response": []
 				}
 			]
 		},
@@ -259,7 +295,99 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"userPhone\" : 5714099543,\n\t\"restaurantName\" : \"Kizuna\",\n\t\"address\" : \"ak92\",\n\t\"cost\":1,\n\t\"food\" :1,\n\t\"cleanliness\":1,\n\t\"service\":1,\n\t\"comment\":\"Boooooo\"\n}"
+							"raw": "{\n\t\"userPhone\" : 5714099543,\n\t\"restaurantName\" : \"JustinCafe\",\n\t\"address\" : \"Justin Cafe Drive TWO\",\n\t\"cost\":5,\n\t\"food\" :5,\n\t\"cleanliness\":5,\n\t\"service\":5\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get ratings by user",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/rating/byuser?phone=5714099543&firstname=akshay&lastname=sonawane",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rating",
+								"byuser"
+							],
+							"query": [
+								{
+									"key": "phone",
+									"value": "5714099543",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "firstname",
+									"value": "akshay",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "lastname",
+									"value": "sonawane",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "you can provide all 3 of first-name, last-name,phone \nOr either of them.\n\nIf all three are missing, an error will be thrown"
+					},
+					"response": []
+				},
+				{
+					"name": "get-restaurant-by-name",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/rating/byrestaurant?name=sushion",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rating",
+								"byrestaurant"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "sushion",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ratings",
+					"request": {
+						"url": "localhost:3000/rating/updaterating",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"originalRating\" :{\n\t\t\"userPhone\" : 1234554321,\n\t\t\"restaurantName\" : \"JustinCafe\",\n\t\t\"address\" : \"Justin Cafe Drive TWO\",\n\t\t\"cost\":1,\n\t\t\"food\" :2,\n\t\t\"cleanliness\":3,\n\t\t\"service\":4\n\t},\n\t\"updateRating\" : {\n\t\"cost\":1,\n\t\"food\" :1,\n\t\"cleanliness\":1,\n\t\"service\":1,\n\t\"comment\" : \"blab\"\n\t}\n}"
 						},
 						"description": ""
 					},
