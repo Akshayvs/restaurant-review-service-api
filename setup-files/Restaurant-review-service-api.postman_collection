@@ -238,6 +238,42 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "Query Restaurants",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/restaurants/query?zip=22222&totalScore=4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								"query"
+							],
+							"query": [
+								{
+									"key": "zip",
+									"value": "22222",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "totalScore",
+									"value": "4",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "\t"
+					},
+					"response": []
 				}
 			]
 		},
@@ -333,6 +369,26 @@
 						"method": "GET",
 						"header": [],
 						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ratings",
+					"request": {
+						"url": "localhost:3000/rating/updaterating",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"originalRating\" :{\n\t\t\"userPhone\" : 1234554321,\n\t\t\"restaurantName\" : \"JustinCafe\",\n\t\t\"address\" : \"Justin Cafe Drive TWO\",\n\t\t\"cost\":1,\n\t\t\"food\" :2,\n\t\t\"cleanliness\":3,\n\t\t\"service\":4\n\t},\n\t\"updateRating\" : {\n\t\"cost\":1,\n\t\"food\" :1,\n\t\"cleanliness\":1,\n\t\"service\":1,\n\t\"comment\" : \"blab\"\n\t}\n}"
+						},
 						"description": ""
 					},
 					"response": []
