@@ -15,6 +15,12 @@ Set up MySQL on your machine.
 -	Download from https://dev.mysql.com/downloads/mysql/
 -	After you have installed mysql, please import the .sql file provided in the folder
 
+Install MySQL workbench on your machine.
+- Download : https://dev.mysql.com/downloads/workbench/
+- Complete the installation and click on `management` on left hand side menu.
+- click on `Data import/ restore` and load the file found in this application root` ./setup-files/database`
+- Once imported , you will have the sample database on your machine as a Schema named ` restaurant-rating-system`.
+
 Install and Setup PostMan
 - Postman is a developer tool that allows us to easily make HTTP Requests to APIs.
 - https://www.getpostman.com/
@@ -25,9 +31,26 @@ Install and Setup PostMan
 
 ## Run the App
 
-Navigate to the project root directory and type ` npm install ` . This will install all the dependencies required for this app to run.
+- Navigate to the project root directory and type ` npm install ` . This will install all the dependencies required for this app to run.
 
-To start the service, type ` node app.js ` in your terminal and hit enter.
+- Set the Process.Env varialbes for the database credentials. Check the ` ./config/defaults.js ` file for more info.
+
+- On Mac , Environment variables can be set as follows
+
+```
+export HOST=localhost
+export USER=your-database-user-name
+export PASS=your-database-pass
+```
+
+- To start the service in debug mode, type the following in your terminal and hit enter.
+```
+export DEBUG=service,users,restaurants,rating
+node app.js
+```
+debug mode will allow you to see a trace of all the sql commands, error information, and other useful information.
+
+- To start the service in regular mode, type ` node app.js ` in your terminal and hit enter.
 
 you will see something like :
 

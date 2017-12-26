@@ -344,7 +344,7 @@
 					"response": []
 				},
 				{
-					"name": "get-restaurant-by-name",
+					"name": "get-rating-by-restaurant-name",
 					"request": {
 						"url": {
 							"raw": "localhost:3000/rating/byrestaurant?name=sushion",
