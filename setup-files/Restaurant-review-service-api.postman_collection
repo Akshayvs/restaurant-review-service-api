@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Restaurant-review-service-api",
-		"_postman_id": "cac1446e-003e-c61a-04f9-d10b6b130297",
+		"_postman_id": "fcd4fd2e-0757-5d68-feea-5bb312f52532",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -37,7 +37,10 @@
 						"url": "localhost:3000/users/allusers",
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -67,7 +70,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -124,7 +130,10 @@
 						"url": "localhost:3000/restaurants/allrestaurants",
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -145,96 +154,6 @@
 							"mode": "raw",
 							"raw": "{\n\t\"name\" :\"BombayCafe\",\n\t\"category\" :\"Indian\",\n\t\"address\" : \"1024, Ramona Drive\",\n\t\"state\" : \"WashingtonDC\",\n\t\"city\" : \"dc\",\n\t\"zip\" : 22222\n}"
 						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "get restaurants by name",
-					"request": {
-						"url": {
-							"raw": "localhost:3000/restaurants/byName?name=kizuna",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"restaurants",
-								"byName"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "kizuna",
-									"equals": true,
-									"description": ""
-								}
-							],
-							"variable": []
-						},
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "ger restaurants by city",
-					"request": {
-						"url": {
-							"raw": "localhost:3000/restaurants/bycity?city=Vienna",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"restaurants",
-								"bycity"
-							],
-							"query": [
-								{
-									"key": "city",
-									"value": "Vienna",
-									"equals": true,
-									"description": ""
-								}
-							],
-							"variable": []
-						},
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "ger restaurant by category",
-					"request": {
-						"url": {
-							"raw": "localhost:3000/restaurants/bycategory?category=japanese",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"restaurants",
-								"bycategory"
-							],
-							"query": [
-								{
-									"key": "category",
-									"value": "japanese",
-									"equals": true,
-									"description": ""
-								}
-							],
-							"variable": []
-						},
-						"method": "GET",
-						"header": [],
-						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -270,8 +189,11 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
-						"description": "\t"
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Query restaurants like Find Mexican restaurant(s) in San Jose (or zip code) with total score above 3 stars"
 					},
 					"response": []
 				}
@@ -338,7 +260,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "you can provide all 3 of first-name, last-name,phone \nOr either of them.\n\nIf all three are missing, an error will be thrown"
 					},
 					"response": []
@@ -368,7 +293,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -401,7 +329,10 @@
 				"url": "http://localhost:3000/service/service-status",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "\t\t"
 			},
 			"response": []
